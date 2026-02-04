@@ -1,48 +1,89 @@
-# Загрузка лендинга на GitHub и GitHub Pages
+# Загрузка и обновление лендинга на GitHub Pages
 
-Репозиторий: **https://github.com/utromaya-code/japa**  
-Код уже запушен в ветку `main`. Осталось опубликовать сайт на GitHub Pages.
+Репозиторий: **https://github.com/utromaya-code/japa**
 
 ---
 
-## 1. Установите зависимости и задеплойте сайт
+## Как обновить сайт (запустить последние изменения)
 
-В терминале выполните:
+Деплой идёт через **GitHub Actions**: при каждом пуше в ветку `main` сайт автоматически собирается и публикуется.
+
+В терминале:
 
 ```bash
 cd "/Users/poslednijgeroj/Library/Mobile Documents/com~apple~CloudDocs/japan-travel-kutuzov"
 
-npm install
-npm run deploy
+git add .
+git commit -m "Фото Леонида, организатор Андрей Баранов, контакт @vsemaya"
+git push origin main
 ```
 
-Скрипт `deploy` соберёт проект (Vite) и отправит папку `dist` в ветку `gh-pages` репозитория.
-
----
-
-## 2. Включите GitHub Pages в настройках репозитория
-
-1. Откройте **https://github.com/utromaya-code/japa**
-2. **Settings** → слева **Pages**
-3. **Source:** Deploy from a branch
-4. **Branch:** выберите `gh-pages` → папка **/ (root)** → **Save**
-
-Через 1–2 минуты сайт будет доступен по адресу:
+Через 1–3 минуты после `git push` обновлённый сайт будет на:
 
 **https://utromaya-code.github.io/japa/**
 
+Статус сборки смотрите во вкладке **Actions** репозитория на GitHub.
+
 ---
 
-## Обновление сайта после изменений
+## Первый запуск: включить GitHub Pages
 
-После правок в коде:
+Если сайт ещё не открывался:
 
-```bash
-cd "/Users/poslednijgeroj/Library/Mobile Documents/com~apple~CloudDocs/japan-travel-kutuzov"
-git add .
-git commit -m "Описание изменений"
-git push
-npm run deploy
-```
+1. Откройте **https://github.com/utromaya-code/japa**
+2. **Settings** → слева **Pages**
+3. В блоке **Build and deployment**:
+   - **Source:** GitHub Actions
+4. Сохраните. При следующем пуше в `main` workflow соберёт и задеплоит сайт.
 
-Ветка `gh-pages` обновится, и GitHub Pages пересоберёт сайт автоматически.
+---
+
+## Привязка своего домена (внешний домен)
+
+К этому сайту **можно привязать свой домен** (например `japan-trip.ru` или `trip.vashsite.ru`). GitHub Pages это поддерживает.
+
+### Шаг 1. Указать домен в настройках репозитория
+
+1. Откройте **https://github.com/utromaya-code/japa** → **Settings** → **Pages**
+2. В поле **Custom domain** введите ваш домен (например `japan-trip.ru` или `www.japan-trip.ru`)
+3. Нажмите **Save**
+4. По желанию включите **Enforce HTTPS** (рекомендуется)
+
+GitHub покажет, какие записи нужно добавить у регистратора домена.
+
+### Шаг 2. Настроить DNS у регистратора домена
+
+Зайдите в панель управления доменом (Reg.ru, Timeweb, Cloudflare, и т.п.) и добавьте записи.
+
+**Вариант A: поддомен** (например `japan.vashsite.ru` или `www.japan-trip.ru`)
+
+| Тип  | Имя (Host) | Значение (Value)        |
+|------|------------|--------------------------|
+| CNAME| `japan` или `www` | `utromaya-code.github.io` |
+
+**Вариант B: корневой домен** (например `japan-trip.ru` без www)
+
+| Тип | Имя | Значение        |
+|-----|-----|------------------|
+| A   | @   | `185.199.108.153` |
+| A   | @   | `185.199.109.153` |
+| A   | @   | `185.199.110.153` |
+| A   | @   | `185.199.111.153` |
+
+(Актуальные IP для GitHub Pages лучше сверить в справке: [GitHub Pages custom domain](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).)
+
+### Шаг 3. Подождать и проверить
+
+- Изменения DNS могут применяться от нескольких минут до 24–48 часов.
+- Когда DNS обновится, в **Settings → Pages** галочка рядом с доменом станет зелёной.
+- После этого сайт будет открываться по вашему домену. Если включён **Enforce HTTPS**, GitHub выдаст бесплатный SSL-сертификат.
+
+### Важно для Vite (SPA)
+
+В проекте в `vite.config.ts` задано `base: './'` — этого достаточно и для **utromaya-code.github.io/japa/**, и для **своего домена** (корень или поддомен). Менять ничего не нужно.
+
+---
+
+## Отправка заявок в Telegram
+
+Чтобы заявки с формы приходили в Telegram, настройте бота и API по инструкции в файле **TELEGRAM.md**.

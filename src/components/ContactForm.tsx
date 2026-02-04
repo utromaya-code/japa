@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { Mail, MessageCircle, Phone, Instagram } from 'lucide-react'
+import { Send } from 'lucide-react'
 import { useState } from 'react'
 
 const schema = z.object({
@@ -34,17 +34,25 @@ export function ContactForm() {
     defaultValues,
   })
 
+  const telegramApiUrl = import.meta.env.VITE_TELEGRAM_API_URL as string | undefined
+
   const onSubmit = async (data: FormData) => {
     try {
-      const res = await fetch('https://formspree.io/f/xpwnqgjk', {
+      const url = telegramApiUrl || 'https://formspree.io/f/xpwnqgjk'
+      const body = telegramApiUrl
+        ? { name: data.name, email: data.email, phone: data.phone, comment: data.comment ?? '' }
+        : data
+      const res = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify(body),
       })
       if (res.ok) {
         setStatus('success')
         reset(defaultValues)
       } else {
+        const err = await res.json().catch(() => ({}))
+        console.error(err)
         setStatus('error')
       }
     } catch {
@@ -138,7 +146,7 @@ export function ContactForm() {
               <p className="text-green-600 font-medium">Заявка отправлена. Мы свяжемся с вами.</p>
             )}
             {status === 'error' && (
-              <p className="text-red-600 font-medium">Ошибка отправки. Попробуйте позже или напишите в Telegram.</p>
+              <p className="text-red-600 font-medium">Ошибка отправки. Попробуйте позже или напишите в Telegram: @vsemaya</p>
             )}
             <button
               type="submit"
@@ -150,35 +158,18 @@ export function ContactForm() {
           </form>
           <div className="space-y-6">
             <h3 className="font-display font-semibold text-xl text-momiji-brown">Контакты</h3>
-            <ul className="space-y-4 text-stone">
-              <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-momiji-orange" />
-                <a href="mailto:info@example.com" className="hover:text-momiji-orange">
-                  info@example.com
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <MessageCircle className="w-5 h-5 text-momiji-orange" />
-                <a href="https://t.me/username" target="_blank" rel="noopener noreferrer" className="hover:text-momiji-orange">
-                  Telegram: @username
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-momiji-orange" />
-                <a href="tel:+79991234567" className="hover:text-momiji-orange">
-                  WhatsApp: +7 999 123-45-67
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Instagram className="w-5 h-5 text-momiji-orange" />
-                <a href="https://instagram.com/username" target="_blank" rel="noopener noreferrer" className="hover:text-momiji-orange">
-                  Instagram: @username
-                </a>
-              </li>
-            </ul>
-            <p className="text-sm text-stone">
-              Замените email, Telegram, WhatsApp и Instagram на актуальные контакты в коде компонента ContactForm.
+            <p className="text-stone">
+              По вопросам и бронированию пишите в Telegram организатору путешествия:
             </p>
+            <a
+              href="https://t.me/vsemaya"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-lg font-medium text-momiji-orange hover:text-maple-accent transition-colors"
+            >
+              <Send className="w-5 h-5" />
+              @vsemaya
+            </a>
           </div>
         </div>
       </div>

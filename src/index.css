@@ -2,33 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes fall {
-  0% {
-    transform: translateY(-10vh) rotate(0deg) translateX(0);
-    opacity: 0.5;
-  }
-  25% {
-    transform: translateY(25vh) rotate(90deg) translateX(20px);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translateY(50vh) rotate(180deg) translateX(-15px);
-    opacity: 0.5;
-  }
-  75% {
-    transform: translateY(75vh) rotate(270deg) translateX(25px);
-    opacity: 0.4;
-  }
-  100% {
-    transform: translateY(110vh) rotate(360deg) translateX(0);
-    opacity: 0.3;
-  }
-}
-
-.animate-fall {
-  animation: fall linear infinite;
-}
-
 html {
   scroll-behavior: smooth;
 }

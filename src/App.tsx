@@ -2,6 +2,7 @@ import { Nav } from './components/Nav'
 import { Hero } from './components/Hero'
 import { Brief } from './components/Brief'
 import { Locations } from './components/Locations'
+import { JourneyMap } from './components/JourneyMap'
 import { UniqueFeatures } from './components/UniqueFeatures'
 import { ProgramTimeline } from './components/ProgramTimeline'
 import { FullProgram } from './components/FullProgram'
@@ -20,6 +21,7 @@ function App() {
         <Hero />
         <Brief />
         <Locations />
+        <JourneyMap />
         <UniqueFeatures />
         <ProgramTimeline />
         <FullProgram />

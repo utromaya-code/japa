@@ -32,7 +32,7 @@ export function FullProgram() {
             return (
               <div
                 key={item.day}
-                className="rounded-xl overflow-hidden border border-stone/20 bg-white shadow-sm"
+                className="rounded-2xl overflow-hidden border border-stone/10 bg-white shadow-sm hover:shadow-md transition-shadow"
               >
                 <button
                   type="button"

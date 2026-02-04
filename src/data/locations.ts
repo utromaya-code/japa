@@ -6,20 +6,21 @@ export interface LocationCard {
   imageAlt: string
 }
 
+// Уникальные фото под каждую локацию: Киото (осень), Коясан (храм), Хоккайдо (горы), Тойя (озеро/вулкан), Отару (канал), Фудзи
 export const locations: LocationCard[] = [
   {
     id: 'kyoto',
     title: 'Киото',
     description: '2 дня в древней столице среди 2000+ храмов и пылающих кленов',
     image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80',
-    imageAlt: 'Киото осенью, храмы и клены',
+    imageAlt: 'Киото осенью, храм и момидзи',
   },
   {
     id: 'koyasan',
     title: 'Коясан',
     description: 'Ночь в буддийском храме, вечное Самадхи Кукая и 1200 лет традиций',
     image: 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&q=80',
-    imageAlt: 'Коясан, красная пагода и кедры',
+    imageAlt: 'Коясан, храм среди кедров',
   },
   {
     id: 'hokkaido',
@@ -32,15 +33,15 @@ export const locations: LocationCard[] = [
     id: 'toya',
     title: 'Озеро Тойя',
     description: 'Действующие вулканы, геотермальная долина и онсены с видом на Эдзо-Фудзи',
-    image: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80',
-    imageAlt: 'Озеро Тойя и вулкан',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+    imageAlt: 'Озеро Тойя и гора Ётэй',
   },
   {
     id: 'otaru',
     title: 'Отару',
     description: 'Романтичный портовый город с газовыми фонарями и музыкальными шкатулками',
     image: 'https://images.unsplash.com/photo-1590559899731-a382839e5549?w=800&q=80',
-    imageAlt: 'Отару канал вечером',
+    imageAlt: 'Отару, канал с фонарями',
   },
   {
     id: 'fuji',

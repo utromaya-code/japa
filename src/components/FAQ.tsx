@@ -6,31 +6,31 @@ import { faqItems } from '../data/faq'
 export function FAQ() {
   const [openId, setOpenId] = useState<string | null>(null)
   return (
-    <section id="faq" className="py-16 md:py-24 bg-momiji-brown text-paper">
+    <section id="faq" className="py-16 md:py-24 bg-paper">
       <div className="container mx-auto px-4 max-w-2xl">
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-center mb-4">
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-momiji-brown text-center mb-2">
           Частые вопросы
         </h2>
-        <p className="text-mist/90 text-center mb-12">
+        <p className="text-stone text-center mb-10">
           Ответы на типичные вопросы о путешествии
         </p>
-        <div className="space-y-2">
+        <div className="space-y-3">
           {faqItems.map((item) => {
             const isOpen = openId === item.id
             return (
               <div
                 key={item.id}
-                className="rounded-xl overflow-hidden bg-momiji-brown/80 border border-paper/10"
+                className="rounded-2xl overflow-hidden bg-white border border-stone/10 shadow-sm hover:shadow-md transition-shadow"
               >
                 <button
                   type="button"
-                  className="w-full flex items-center justify-between gap-3 p-4 md:p-5 text-left hover:bg-paper/5 transition-colors"
+                  className="w-full flex items-center justify-between gap-3 p-4 md:p-5 text-left hover:bg-stone/5 transition-colors text-momiji-brown"
                   onClick={() => setOpenId(isOpen ? null : item.id)}
                   aria-expanded={isOpen}
                 >
-                  <span className="font-semibold text-paper">{item.question}</span>
+                  <span className="font-semibold">{item.question}</span>
                   <ChevronDown
-                    className={`w-5 h-5 shrink-0 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                    className={`w-5 h-5 shrink-0 text-maple-accent transition-transform ${isOpen ? 'rotate-180' : ''}`}
                   />
                 </button>
                 <AnimatePresence>
@@ -42,7 +42,7 @@ export function FAQ() {
                       transition={{ duration: 0.25 }}
                       className="overflow-hidden"
                     >
-                      <p className="px-4 pb-4 md:px-5 md:pb-5 text-paper/85 text-sm md:text-base leading-relaxed border-t border-paper/10 pt-3">
+                      <p className="px-4 pb-4 md:px-5 md:pb-5 text-stone text-sm md:text-base leading-relaxed border-t border-stone/10 pt-3">
                         {item.answer}
                       </p>
                     </motion.div>
