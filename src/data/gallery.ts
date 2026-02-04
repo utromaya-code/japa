@@ -1,15 +1,15 @@
-// Галерея: осень (момидзи), храмы, вулканы, онсены — больше осенних и онсенов
+// Локальные фото (images/xxx.jpg) + внешние URL где загрузка не удалась
 export const galleryImages = [
-  { src: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80', alt: 'Киото осенью, храм и клены момидзи' },
-  { src: 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&q=80', alt: 'Храм среди осенней листвы' },
+  { src: 'images/kyoto.jpg', alt: 'Киото осенью, храм и клены момидзи' },
+  { src: 'images/koyasan.jpg', alt: 'Храм среди осенней листвы' },
   { src: 'https://images.unsplash.com/photo-1513407030346-922708e85207?w=800&q=80', alt: 'Клены момидзи крупным планом' },
-  { src: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80', alt: 'Тории и осенний лес' },
-  { src: 'https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=800&q=80', alt: 'Японский сад осенью' },
-  { src: 'https://images.unsplash.com/photo-1560076603-3a05db5c1f76?w=800&q=80', alt: 'Хоккайдо: зелёные поля' },
-  { src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80', alt: 'Озеро и вулканические горы' },
+  { src: 'images/torii-autumn.jpg', alt: 'Тории и осенний лес' },
+  { src: 'images/garden-autumn.jpg', alt: 'Японский сад осенью' },
+  { src: 'images/hokkaido.jpg', alt: 'Хоккайдо: зелёные поля' },
+  { src: 'images/lake-mountains.jpg', alt: 'Озеро и вулканические горы' },
   { src: 'https://images.unsplash.com/photo-1507003216830-8c646df9e1c4?w=800&q=80', alt: 'Онсен, горячие источники с видом на горы' },
   { src: 'https://images.unsplash.com/photo-1480795462217-32e7c4e4e1c?w=800&q=80', alt: 'Горячие источники, пар над водой' },
   { src: 'https://images.unsplash.com/photo-1609831353201-Dx0IdH2CfCk?w=800&q=80', alt: 'Отару, романтичный канал с фонарями' },
-  { src: 'https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=800&q=80', alt: 'Гора Фудзи и озеро Кавагутико осенью' },
+  { src: 'images/fuji.jpg', alt: 'Гора Фудзи и озеро Кавагутико осенью' },
   { src: 'https://images.unsplash.com/photo-1476517589517-ea4b89fd41f5?w=800&q=80', alt: 'Японский храм в осенних горах' },
 ]

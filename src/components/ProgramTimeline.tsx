@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 import { program } from '../data/program'
+import { getImageUrl } from '../utils/imageUrl'
 
 export function ProgramTimeline() {
   const [expandedId, setExpandedId] = useState<string | null>(null)
@@ -59,7 +60,7 @@ export function ProgramTimeline() {
                     >
                       <div className="flex flex-col sm:flex-row gap-4 p-5 md:p-6 pt-4 bg-stone/[0.03]">
                         <img
-                          src={day.image}
+                          src={getImageUrl(day.image)}
                           alt={day.imageAlt}
                           className="w-full sm:w-48 h-40 sm:h-32 rounded-xl object-cover shrink-0"
                           loading="lazy"

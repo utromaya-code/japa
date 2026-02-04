@@ -6,27 +6,27 @@ export interface LocationCard {
   imageAlt: string
 }
 
-// Уникальные фото: осень (момидзи), храмы, вулканы, онсены
+// Локальные фото в public/images/; внешние URL оставлены только где загрузка не удалась
 export const locations: LocationCard[] = [
   {
     id: 'kyoto',
     title: 'Киото',
     description: '2 дня в древней столице среди 2000+ храмов и пылающих кленов',
-    image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80',
+    image: 'images/kyoto.jpg',
     imageAlt: 'Киото осенью, храм и момидзи',
   },
   {
     id: 'koyasan',
     title: 'Коясан',
     description: 'Ночь в буддийском храме, вечное Самадхи Кукая и 1200 лет традиций',
-    image: 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&q=80',
+    image: 'images/koyasan.jpg',
     imageAlt: 'Коясан, храм среди осенних кленов',
   },
   {
     id: 'hokkaido',
     title: 'Хоккайдо (Хидака)',
     description: 'Дикие горы айнов, первозданные леса и священные вершины',
-    image: 'https://images.unsplash.com/photo-1560076603-3a05db5c1f76?w=800&q=80',
+    image: 'images/hokkaido.jpg',
     imageAlt: 'Хоккайдо: зелёные поля и парк Моэренума',
   },
   {
@@ -47,7 +47,7 @@ export const locations: LocationCard[] = [
     id: 'fuji',
     title: 'Токио & Фудзи',
     description: 'Священная вершина Японии и опция восхождения с Леонидом',
-    image: 'https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=800&q=80',
+    image: 'images/fuji.jpg',
     imageAlt: 'Гора Фудзи и озеро Кавагутико осенью',
   },
 ]

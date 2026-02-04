@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Send } from 'lucide-react'
 
 // Фото организатора: положите файл в public/images/andrey-baranov.png
-const ORGANIZER_IMAGE = '/images/andrey-baranov.png'
+const ORGANIZER_IMAGE = `${import.meta.env.BASE_URL}images/andrey-baranov.png`
 const ORGANIZER_IMAGE_FALLBACK = 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80'
 
 const description = `Координирует маршрут, связь с участниками и ответы на все вопросы по поездке. По вопросам бронирования и программы пишите в Telegram — отвечу в течение дня.`

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import type { LocationCard as LocationCardType } from '../data/locations'
+import { getImageUrl } from '../utils/imageUrl'
 
 export function LocationCard({ location, index }: { location: LocationCardType; index: number }) {
   return (
@@ -14,7 +15,7 @@ export function LocationCard({ location, index }: { location: LocationCardType; 
       <a href={`#${location.id}`} className="block">
         <div className="aspect-[4/3] overflow-hidden">
           <img
-            src={location.image}
+            src={getImageUrl(location.image)}
             alt={location.imageAlt}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             loading="lazy"

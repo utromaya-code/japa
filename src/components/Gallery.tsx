@@ -3,10 +3,11 @@ import Lightbox from 'yet-another-react-lightbox'
 import 'yet-another-react-lightbox/styles.css'
 import { galleryImages } from '../data/gallery'
 import { motion } from 'framer-motion'
+import { getImageUrl } from '../utils/imageUrl'
 
 export function Gallery() {
   const [index, setIndex] = useState(-1)
-  const slides = galleryImages.map((img) => ({ src: img.src, alt: img.alt }))
+  const slides = galleryImages.map((img) => ({ src: getImageUrl(img.src), alt: img.alt }))
   return (
     <section id="gallery" className="py-16 md:py-24 bg-paper">
       <div className="container mx-auto px-4">
@@ -29,7 +30,7 @@ export function Gallery() {
               onClick={() => setIndex(i)}
             >
               <img
-                src={img.src}
+                src={getImageUrl(img.src)}
                 alt={img.alt}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 loading="lazy"

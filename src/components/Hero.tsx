@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 
-const HERO_IMAGE = 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1920&q=85'
+const HERO_IMAGE = `${import.meta.env.BASE_URL}images/hero-temple.jpg`
 
 export function Hero() {
   const { scrollY } = useScroll()

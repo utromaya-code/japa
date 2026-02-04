@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 import { Quote } from 'lucide-react'
 
-const INSTRUCTOR_IMAGE_LOCAL = '/images/leonid-kutuzov.png'
+const INSTRUCTOR_IMAGE_LOCAL = `${import.meta.env.BASE_URL}images/leonid-kutuzov.png`
 const INSTRUCTOR_IMAGE_FALLBACK = 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&q=80'
 
 const bullets = [
@@ -33,16 +33,6 @@ export function AboutInstructor() {
       aria-labelledby="instructor-heading"
     >
       <div className="absolute inset-0 bg-stone/5" aria-hidden />
-      <div
-        className="absolute inset-0 opacity-[0.06] bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/images/leonid-kutuzov.png')" }}
-        aria-hidden
-      />
-      <div
-        className="absolute inset-0 opacity-[0.06] bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${INSTRUCTOR_IMAGE_LOCAL})` }}
-        aria-hidden
-      />
       <div className="relative z-10 container mx-auto px-4 max-w-5xl">
         <div className="text-center mb-12">
           <span className="inline-block text-maple-accent font-display font-semibold text-sm uppercase tracking-widest mb-2">
