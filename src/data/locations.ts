@@ -26,8 +26,8 @@ export const locations: LocationCard[] = [
     id: 'hokkaido',
     title: 'Хоккайдо (Хидака)',
     description: 'Дикие горы айнов, первозданные леса и священные вершины',
-    image: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80',
-    imageAlt: 'Горы Хоккайдо осенью',
+    image: 'https://images.unsplash.com/photo-1560076603-3a05db5c1f76?w=800&q=80',
+    imageAlt: 'Хоккайдо: зелёные поля и парк Моэренума',
   },
   {
     id: 'toya',
@@ -40,8 +40,8 @@ export const locations: LocationCard[] = [
     id: 'otaru',
     title: 'Отару',
     description: 'Романтичный портовый город с газовыми фонарями и музыкальными шкатулками',
-    image: 'https://images.unsplash.com/photo-1590559899731-a382839e5549?w=800&q=80',
-    imageAlt: 'Отару, канал с фонарями',
+    image: 'https://images.unsplash.com/photo-1609831353201-Dx0IdH2CfCk?w=800&q=80',
+    imageAlt: 'Отару, романтичный канал с кирпичными складами и фонарями',
   },
   {
     id: 'fuji',

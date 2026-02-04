@@ -1,24 +1,31 @@
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 
-// Киото, момидзи — осенние клены у храма
 const HERO_IMAGE = 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1920&q=85'
 
 export function Hero() {
+  const { scrollY } = useScroll()
+  const backgroundY = useTransform(scrollY, [0, 600], [0, 150])
+  const contentOpacity = useTransform(scrollY, [0, 400], [1, 0])
+  const contentY = useTransform(scrollY, [0, 400], [0, 30])
+
   return (
     <section
       id="hero"
       className="relative min-h-screen flex flex-col justify-end pb-20 md:pb-28 bg-momiji-brown"
     >
-      <div
+      <motion.div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${HERO_IMAGE})` }}
+        style={{ backgroundImage: `url(${HERO_IMAGE})`, y: backgroundY }}
       />
       <div
         className="absolute inset-0 bg-gradient-to-t from-paper via-paper/95 to-transparent"
         aria-hidden
       />
-      <div className="relative z-10 container mx-auto px-4 text-center text-momiji-brown">
+      <motion.div
+        className="relative z-10 container mx-auto px-4 text-center text-momiji-brown"
+        style={{ opacity: contentOpacity, y: contentY }}
+      >
         <motion.h1
           className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4"
           initial={{ opacity: 0, y: 24 }}
@@ -51,20 +58,26 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
-          <a
+          <motion.a
             href="#booking"
-            className="w-full sm:w-auto min-w-0 sm:min-w-[200px] px-8 py-4 min-h-[48px] flex items-center justify-center rounded-lg font-semibold bg-maple-accent hover:bg-momiji-red text-white transition-colors shadow-lg touch-manipulation"
+            className="w-full sm:w-auto min-w-0 sm:min-w-[200px] px-8 py-4 min-h-[48px] flex items-center justify-center rounded-lg font-semibold bg-maple-accent hover:bg-momiji-red text-white shadow-lg touch-manipulation"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ duration: 0.2 }}
           >
             Забронировать место
-          </a>
-          <a
+          </motion.a>
+          <motion.a
             href="#program"
-            className="w-full sm:w-auto min-w-0 sm:min-w-[200px] px-8 py-4 min-h-[48px] flex items-center justify-center rounded-lg font-semibold border-2 border-momiji-brown text-momiji-brown hover:bg-momiji-brown/5 transition-colors touch-manipulation"
+            className="w-full sm:w-auto min-w-0 sm:min-w-[200px] px-8 py-4 min-h-[48px] flex items-center justify-center rounded-lg font-semibold border-2 border-momiji-brown text-momiji-brown hover:bg-momiji-brown/5 touch-manipulation"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ duration: 0.2 }}
           >
             Программа путешествия
-          </a>
+          </motion.a>
         </motion.div>
-      </div>
+      </motion.div>
       <a
         href="#about"
         className="absolute bottom-6 left-1/2 -translate-x-1/2 text-momiji-brown/70 hover:text-momiji-brown transition-colors"

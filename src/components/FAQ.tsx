@@ -20,7 +20,9 @@ export function FAQ() {
             return (
               <div
                 key={item.id}
-                className="rounded-2xl overflow-hidden bg-white border border-stone/10 shadow-sm hover:shadow-md transition-shadow"
+                className={`rounded-2xl overflow-hidden bg-white border border-stone/10 shadow-sm hover:shadow-md transition-all duration-300 ${
+                  isOpen ? 'border-l-4 border-l-momiji-gold shadow-md' : 'border-l-4 border-l-transparent'
+                }`}
               >
                 <button
                   type="button"
@@ -30,7 +32,7 @@ export function FAQ() {
                 >
                   <span className="font-semibold">{item.question}</span>
                   <ChevronDown
-                    className={`w-5 h-5 shrink-0 text-maple-accent transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                    className={`w-5 h-5 shrink-0 text-maple-accent transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
                   />
                 </button>
                 <AnimatePresence>

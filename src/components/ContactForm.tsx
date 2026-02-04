@@ -1,8 +1,9 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { Send } from 'lucide-react'
+import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
 import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const schema = z.object({
   name: z.string().min(2, 'Введите имя'),
@@ -79,7 +80,7 @@ export function ContactForm() {
                 id="name"
                 type="text"
                 {...register('name')}
-                className="w-full px-4 py-3 rounded-lg border border-stone/30 focus:ring-2 focus:ring-momiji-orange focus:border-transparent outline-none"
+                className="w-full px-4 py-3 rounded-lg border border-stone/30 focus:ring-2 focus:ring-momiji-orange focus:border-transparent outline-none transition-shadow duration-200 focus:shadow-md"
                 placeholder="Ваше имя"
               />
               {errors.name && (
@@ -94,7 +95,7 @@ export function ContactForm() {
                 id="email"
                 type="email"
                 {...register('email')}
-                className="w-full px-4 py-3 rounded-lg border border-stone/30 focus:ring-2 focus:ring-momiji-orange focus:border-transparent outline-none"
+                className="w-full px-4 py-3 rounded-lg border border-stone/30 focus:ring-2 focus:ring-momiji-orange focus:border-transparent outline-none transition-shadow duration-200 focus:shadow-md"
                 placeholder="email@example.com"
               />
               {errors.email && (
@@ -109,7 +110,7 @@ export function ContactForm() {
                 id="phone"
                 type="tel"
                 {...register('phone')}
-                className="w-full px-4 py-3 rounded-lg border border-stone/30 focus:ring-2 focus:ring-momiji-orange focus:border-transparent outline-none"
+                className="w-full px-4 py-3 rounded-lg border border-stone/30 focus:ring-2 focus:ring-momiji-orange focus:border-transparent outline-none transition-shadow duration-200 focus:shadow-md"
                 placeholder="+7 (999) 123-45-67"
               />
               {errors.phone && (
@@ -124,7 +125,7 @@ export function ContactForm() {
                 id="comment"
                 {...register('comment')}
                 rows={3}
-                className="w-full px-4 py-3 rounded-lg border border-stone/30 focus:ring-2 focus:ring-momiji-orange focus:border-transparent outline-none resize-none"
+                className="w-full px-4 py-3 rounded-lg border border-stone/30 focus:ring-2 focus:ring-momiji-orange focus:border-transparent outline-none resize-none transition-shadow duration-200 focus:shadow-md"
                 placeholder="Вопросы или пожелания"
               />
             </div>
@@ -142,19 +143,46 @@ export function ContactForm() {
             {errors.consent && (
               <p className="text-sm text-red-600">{errors.consent.message}</p>
             )}
-            {status === 'success' && (
-              <p className="text-green-600 font-medium">Заявка отправлена. Мы свяжемся с вами.</p>
-            )}
-            {status === 'error' && (
-              <p className="text-red-600 font-medium">Ошибка отправки. Попробуйте позже или напишите в Telegram: @vsemaya</p>
-            )}
-            <button
+            <AnimatePresence mode="wait">
+              {status === 'success' && (
+                <motion.p
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  className="flex items-center gap-2 text-green-600 font-medium"
+                >
+                  <CheckCircle className="w-5 h-5 shrink-0" />
+                  Заявка отправлена. Мы свяжемся с вами.
+                </motion.p>
+              )}
+              {status === 'error' && (
+                <motion.p
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  className="flex items-center gap-2 text-red-600 font-medium"
+                >
+                  <AlertCircle className="w-5 h-5 shrink-0" />
+                  Ошибка отправки. Попробуйте позже или напишите в Telegram: @vsemaya
+                </motion.p>
+              )}
+            </AnimatePresence>
+            <motion.button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-4 rounded-lg font-semibold bg-momiji-orange hover:bg-maple-accent text-white transition-colors disabled:opacity-50"
+              className="w-full py-4 rounded-lg font-semibold bg-momiji-orange hover:bg-maple-accent text-white transition-all duration-300 disabled:opacity-50 hover:shadow-lg active:scale-[0.98]"
+              whileHover={!isSubmitting ? { scale: 1.01 } : {}}
+              whileTap={!isSubmitting ? { scale: 0.99 } : {}}
             >
-              {isSubmitting ? 'Отправка…' : 'Забронировать место'}
-            </button>
+              {isSubmitting ? (
+                <span className="inline-flex items-center justify-center gap-2">
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                  Отправка…
+                </span>
+              ) : (
+                'Забронировать место'
+              )}
+            </motion.button>
           </form>
           <div className="space-y-6">
             <h3 className="font-display font-semibold text-xl text-momiji-brown">Контакты</h3>

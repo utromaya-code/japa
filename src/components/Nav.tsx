@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
@@ -10,6 +10,7 @@ const links = [
   { href: '#program', label: 'Программа' },
   { href: '#full-program', label: 'Маршрут' },
   { href: '#instructor', label: 'О Леониде' },
+  { href: '#organizer', label: 'Организатор' },
   { href: '#practical', label: 'Информация' },
   { href: '#faq', label: 'FAQ' },
   { href: '#booking', label: 'Забронировать' },
@@ -17,8 +18,18 @@ const links = [
 
 export function Nav() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 80)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
   return (
-    <nav className="sticky top-0 z-50 w-full bg-paper/98 backdrop-blur-md border-b border-stone/10 shadow-sm">
+    <nav
+      className={`sticky top-0 z-50 w-full backdrop-blur-md border-b transition-all duration-300 ${
+        scrolled ? 'bg-paper/98 border-stone/10 shadow-md' : 'bg-paper/95 border-stone/5 shadow-sm'
+      }`}
+    >
       <div className="container mx-auto px-4 flex items-center justify-between h-16 md:h-18">
         <a href="#hero" className="font-display text-xl font-semibold text-momiji-brown">
           Япония 2026

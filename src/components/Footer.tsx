@@ -14,6 +14,7 @@ const navLinks = [
   { href: '#program', label: 'Программа' },
   { href: '#full-program', label: 'Маршрут' },
   { href: '#instructor', label: 'О Леониде' },
+  { href: '#organizer', label: 'Организатор' },
   { href: '#booking', label: 'Контакты' },
   { href: '#', label: 'Политика конфиденциальности' },
 ]

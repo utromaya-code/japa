@@ -1,5 +1,6 @@
 import { Calendar, Clock, Users, MapPin, Check, X } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { AnimatedNumber } from './AnimatedNumber'
 
 const included = [
   'Все внутренние перелёты',
@@ -21,8 +22,24 @@ const excluded = [
 
 const cards = [
   { icon: Calendar, label: 'Даты', value: '10–20 октября 2026' },
-  { icon: Clock, label: 'Продолжительность', value: '11 дней / 10 ночей' },
-  { icon: Users, label: 'Группа', value: 'до 15 человек' },
+  {
+    icon: Clock,
+    label: 'Продолжительность',
+    valueJsx: (
+      <>
+        <AnimatedNumber end={11} /> дней / <AnimatedNumber end={10} /> ночей
+      </>
+    ),
+  },
+  {
+    icon: Users,
+    label: 'Группа',
+    valueJsx: (
+      <>
+        до <AnimatedNumber end={12} /> человек
+      </>
+    ),
+  },
   { icon: MapPin, label: 'Маршрут', value: 'Осака → Киото → Коясан → Хоккайдо → Токио' },
 ]
 
@@ -49,7 +66,9 @@ export function PracticalInfo() {
               <card.icon className="w-6 h-6 text-momiji-orange shrink-0 mt-0.5" />
               <div>
                 <p className="text-stone text-sm font-medium">{card.label}</p>
-                <p className="text-momiji-brown font-semibold">{card.value}</p>
+                <p className="text-momiji-brown font-semibold">
+                  {'valueJsx' in card ? card.valueJsx : card.value}
+                </p>
               </div>
             </motion.div>
           ))}

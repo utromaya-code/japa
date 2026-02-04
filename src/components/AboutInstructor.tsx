@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
-import { Quote, Send } from 'lucide-react'
+import { Quote } from 'lucide-react'
 
 const INSTRUCTOR_IMAGE_LOCAL = '/images/leonid-kutuzov.png'
 const INSTRUCTOR_IMAGE_FALLBACK = 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&q=80'
@@ -108,21 +108,6 @@ export function AboutInstructor() {
               </p>
               <cite className="not-italic text-stone text-sm mt-2 block">— Леонид Кутузов</cite>
             </blockquote>
-            <div className="pt-6 border-t border-stone/20">
-              <p className="font-display font-semibold text-maple-accent text-lg mb-1">
-                Организатор путешествия
-              </p>
-              <p className="text-momiji-brown font-medium">Андрей Баранов</p>
-              <a
-                href="https://t.me/vsemaya"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-momiji-orange hover:text-maple-accent transition-colors mt-1"
-              >
-                <Send className="w-5 h-5" />
-                Telegram: @vsemaya
-              </a>
-            </div>
           </div>
         </motion.div>
       </div>
