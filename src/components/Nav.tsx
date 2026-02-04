@@ -3,17 +3,15 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
 const links = [
-  { href: '#about', label: 'О путешествии' },
+  { href: '#about', label: 'О поездке' },
   { href: '#locations', label: 'Локации' },
   { href: '#map', label: 'Карта' },
   { href: '#features', label: 'Особенности' },
-  { href: '#program', label: 'Программа' },
   { href: '#full-program', label: 'Маршрут' },
-  { href: '#instructor', label: 'О Леониде' },
-  { href: '#organizer', label: 'Организатор' },
-  { href: '#practical', label: 'Информация' },
+  { href: '#instructor', label: 'Команда' },
+  { href: '#practical', label: 'Инфо' },
   { href: '#faq', label: 'FAQ' },
-  { href: '#booking', label: 'Забронировать' },
+  { href: '#booking', label: 'Бронь' },
 ]
 
 export function Nav() {
@@ -34,12 +32,12 @@ export function Nav() {
         <a href="#hero" className="font-display text-xl font-semibold text-momiji-brown">
           Япония 2026
         </a>
-        <ul className="hidden md:flex items-center gap-6">
+        <ul className="hidden md:flex items-center gap-3">
           {links.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-momiji-brown/90 hover:text-maple-accent text-sm font-medium transition-colors"
+                className="text-momiji-brown/90 hover:text-maple-accent text-xs font-medium transition-colors whitespace-nowrap"
               >
                 {link.label}
               </a>

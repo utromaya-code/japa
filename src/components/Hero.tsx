@@ -69,7 +69,7 @@ export function Hero() {
             Забронировать место
           </motion.a>
           <motion.a
-            href="#program"
+            href="#full-program"
             className="w-full sm:w-auto min-w-0 sm:min-w-[200px] px-8 py-4 min-h-[48px] flex items-center justify-center rounded-lg font-semibold border-2 border-momiji-brown text-momiji-brown hover:bg-momiji-brown/5 touch-manipulation"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}

@@ -1,21 +1,11 @@
-import { Instagram, Facebook, Youtube, Send } from 'lucide-react'
-
-const social = [
-  { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
-  { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
-  { icon: Youtube, href: 'https://youtube.com', label: 'YouTube' },
-  { icon: Send, href: 'https://t.me', label: 'Telegram' },
-]
-
 const navLinks = [
-  { href: '#about', label: 'О путешествии' },
+  { href: '#about', label: 'О поездке' },
   { href: '#locations', label: 'Локации' },
-  { href: '#map', label: 'Карта' },
-  { href: '#program', label: 'Программа' },
   { href: '#full-program', label: 'Маршрут' },
-  { href: '#instructor', label: 'О Леониде' },
-  { href: '#organizer', label: 'Организатор' },
-  { href: '#booking', label: 'Контакты' },
+  { href: '#instructor', label: 'Команда' },
+  { href: '#practical', label: 'Инфо' },
+  { href: '#faq', label: 'FAQ' },
+  { href: '#booking', label: 'Бронь' },
   { href: '#', label: 'Политика конфиденциальности' },
 ]
 
@@ -27,20 +17,6 @@ export function Footer() {
           <p className="font-display text-lg text-momiji-brown/90 text-center md:text-left">
             © 2026 Леонид Кутузов. Путешествия и практики.
           </p>
-          <div className="flex gap-4">
-            {social.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 text-momiji-brown/80 hover:text-maple-accent transition-colors"
-                aria-label={item.label}
-              >
-                <item.icon className="w-5 h-5" />
-              </a>
-            ))}
-          </div>
         </div>
         <nav className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 text-sm">
           {navLinks.map((link) => (
