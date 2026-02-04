@@ -1,6 +1,6 @@
-// 20 уникальных фото осенней Японии и маршрута (Wikimedia Commons + локальные)
+// Только проверенные фото Японии и маршрута (Wikimedia Commons)
 export const galleryImages = [
-  { src: 'images/kyoto-kiyomizu.jpg', alt: 'Киото, пагода Кийомидзу и осенние клены' },
+  { src: 'images/kyoto-kiyomizu.jpg', alt: 'Киото, пагода Киёмидзу и осенние клены' },
   { src: 'images/kyoto-maples.jpg', alt: 'Киото, момидзи в Рёан-дзи' },
   { src: 'images/kyoto-eikando.jpg', alt: 'Киото, храм Эйкан-до, пагода и клены' },
   { src: 'images/kyoto-tofukuji.jpg', alt: 'Киото, сад Тофуку-дзи осенью' },
@@ -8,16 +8,7 @@ export const galleryImages = [
   { src: 'images/koyasan-okunoin.jpg', alt: 'Коясан, кладбище Окуно-ин' },
   { src: 'images/hokkaido-yotei.jpg', alt: 'Хоккайдо, гора Ётэй' },
   { src: 'images/fuji-kawaguchiko.jpg', alt: 'Озеро Кавагутико и Фудзи в сезон момидзи' },
-  { src: 'images/hero-temple.jpg', alt: 'Храм в осенней листве' },
-  { src: 'images/garden-autumn.jpg', alt: 'Японский сад осенью' },
-  { src: 'images/torii-autumn.jpg', alt: 'Тории и осенний лес' },
-  { src: 'images/fuji.jpg', alt: 'Гора Фудзи' },
-  { src: 'images/otaru-new.jpg', alt: 'Отару, канал' },
-  { src: 'images/lake-toya-new.jpg', alt: 'Озеро Тойя' },
-  { src: 'images/kyoto-new.jpg', alt: 'Киото, храм и осень' },
-  { src: 'images/hokkaido-new.jpg', alt: 'Хоккайдо, природа' },
-  { src: 'images/koyasan.jpg', alt: 'Коясан, храм' },
-  { src: 'images/kyoto.jpg', alt: 'Киото' },
-  { src: 'images/lake-mountains.jpg', alt: 'Озеро и горы' },
-  { src: 'images/gal-16.jpg', alt: 'Осенний Киото' },
+  { src: 'images/lake-toya.jpg', alt: 'Озеро Тойя, Хоккайдо' },
+  { src: 'images/tokyo-fuji.jpg', alt: 'Вид на Фудзи из Токио' },
+  { src: 'images/otaru-sakaimachi.jpg', alt: 'Отару, улица Сакаимати' },
 ]
