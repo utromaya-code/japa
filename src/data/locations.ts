@@ -6,7 +6,7 @@ export interface LocationCard {
   imageAlt: string
 }
 
-// Уникальные фото под каждую локацию: Киото (осень), Коясан (храм), Хоккайдо (горы), Тойя (озеро/вулкан), Отару (канал), Фудзи
+// Уникальные фото: осень (момидзи), храмы, вулканы, онсены
 export const locations: LocationCard[] = [
   {
     id: 'kyoto',
@@ -20,7 +20,7 @@ export const locations: LocationCard[] = [
     title: 'Коясан',
     description: 'Ночь в буддийском храме, вечное Самадхи Кукая и 1200 лет традиций',
     image: 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&q=80',
-    imageAlt: 'Коясан, храм среди кедров',
+    imageAlt: 'Коясан, храм среди осенних кленов',
   },
   {
     id: 'hokkaido',
@@ -33,8 +33,8 @@ export const locations: LocationCard[] = [
     id: 'toya',
     title: 'Озеро Тойя',
     description: 'Действующие вулканы, геотермальная долина и онсены с видом на Эдзо-Фудзи',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
-    imageAlt: 'Озеро Тойя и гора Ётэй',
+    image: 'https://images.unsplash.com/photo-1480795462217-32e7c4e4e1c?w=800&q=80',
+    imageAlt: 'Горячие источники, онсен в Японии',
   },
   {
     id: 'otaru',
@@ -48,6 +48,6 @@ export const locations: LocationCard[] = [
     title: 'Токио & Фудзи',
     description: 'Священная вершина Японии и опция восхождения с Леонидом',
     image: 'https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=800&q=80',
-    imageAlt: 'Гора Фудзи и озеро Кавагутико',
+    imageAlt: 'Гора Фудзи и озеро Кавагутико осенью',
   },
 ]

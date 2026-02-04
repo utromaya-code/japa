@@ -33,6 +33,16 @@ export function AboutInstructor() {
       aria-labelledby="instructor-heading"
     >
       <div className="absolute inset-0 bg-stone/5" aria-hidden />
+      <div
+        className="absolute inset-0 opacity-[0.06] bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/images/leonid-kutuzov.png')" }}
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 opacity-[0.06] bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${INSTRUCTOR_IMAGE_LOCAL})` }}
+        aria-hidden
+      />
       <div className="relative z-10 container mx-auto px-4 max-w-5xl">
         <div className="text-center mb-12">
           <span className="inline-block text-maple-accent font-display font-semibold text-sm uppercase tracking-widest mb-2">
