@@ -20,7 +20,7 @@ const defaultValues = {
   phone: '',
   comment: '',
   consent: false,
-} as FormData
+} as unknown as FormData
 
 export function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
