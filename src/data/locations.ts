@@ -20,7 +20,7 @@ export const locations: LocationCard[] = [
     title: 'Коясан',
     description: 'Ночь в буддийском храме, вечное Самадхи Кукая и 1200 лет традиций',
     image: 'images/koyasan-okunoin.jpg',
-    imageAlt: 'Коясан, Окуно-ин',
+    imageAlt: 'Японский храм осенью',
   },
   {
     id: 'hokkaido',
@@ -41,7 +41,7 @@ export const locations: LocationCard[] = [
     title: 'Отару',
     description: 'Романтичный портовый город с газовыми фонарями и музыкальными шкатулками',
     image: 'images/otaru-canal.jpg',
-    imageAlt: 'Отару, канал и исторические склады',
+    imageAlt: 'Улица в Японии',
   },
   {
     id: 'fuji',
