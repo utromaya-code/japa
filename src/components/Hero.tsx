@@ -5,21 +5,22 @@ const HERO_IMAGE = `${import.meta.env.BASE_URL}images/hero-temple.jpg`
 
 export function Hero() {
   const { scrollY } = useScroll()
-  const backgroundY = useTransform(scrollY, [0, 600], [0, 150])
+  const backgroundY = useTransform(scrollY, [0, 500], [0, 40])
   const contentOpacity = useTransform(scrollY, [0, 400], [1, 0])
   const contentY = useTransform(scrollY, [0, 400], [0, 30])
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col justify-end pb-20 md:pb-28 bg-momiji-brown"
+      className="relative min-h-screen flex flex-col justify-end pb-20 md:pb-28 bg-momiji-brown overflow-hidden"
     >
       <motion.div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${HERO_IMAGE})`, y: backgroundY }}
+        aria-hidden
       />
       <div
-        className="absolute inset-0 bg-gradient-to-t from-paper via-paper/95 to-transparent"
+        className="absolute inset-0 bg-gradient-to-t from-paper via-paper/98 to-transparent"
         aria-hidden
       />
       <motion.div

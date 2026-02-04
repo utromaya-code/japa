@@ -40,7 +40,7 @@ export const locations: LocationCard[] = [
     id: 'otaru',
     title: 'Отару',
     description: 'Романтичный портовый город с газовыми фонарями и музыкальными шкатулками',
-    image: 'images/kyoto.jpg',
+    image: 'images/torii-autumn.jpg',
     imageAlt: 'Отару, романтичный канал с кирпичными складами и фонарями',
   },
   {
