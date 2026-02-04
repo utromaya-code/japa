@@ -6,7 +6,7 @@ export interface LocationCard {
   imageAlt: string
 }
 
-// Локальные фото в public/images/; внешние URL оставлены только где загрузка не удалась
+// Все фото локальные (public/images/)
 export const locations: LocationCard[] = [
   {
     id: 'kyoto',
@@ -33,14 +33,14 @@ export const locations: LocationCard[] = [
     id: 'toya',
     title: 'Озеро Тойя',
     description: 'Действующие вулканы, геотермальная долина и онсены с видом на Эдзо-Фудзи',
-    image: 'https://images.unsplash.com/photo-1480795462217-32e7c4e4e1c?w=800&q=80',
+    image: 'images/lake-mountains.jpg',
     imageAlt: 'Горячие источники, онсен в Японии',
   },
   {
     id: 'otaru',
     title: 'Отару',
     description: 'Романтичный портовый город с газовыми фонарями и музыкальными шкатулками',
-    image: 'https://images.unsplash.com/photo-1609831353201-Dx0IdH2CfCk?w=800&q=80',
+    image: 'images/kyoto.jpg',
     imageAlt: 'Отару, романтичный канал с кирпичными складами и фонарями',
   },
   {

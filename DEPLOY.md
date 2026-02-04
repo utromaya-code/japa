@@ -20,7 +20,9 @@ git push origin main
 
 Через 1–3 минуты после `git push` обновлённый сайт будет на:
 
-**https://leo-japan.ru**
+**https://utromaya-code.github.io/japa/**
+
+(После настройки DNS по инструкции ниже сайт также откроется по **https://leo-japan.ru**.)
 
 Статус сборки смотрите во вкладке **Actions** репозитория на GitHub.
 
