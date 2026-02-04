@@ -2,6 +2,28 @@
 
 Репозиторий: **https://github.com/utromaya-code/japa**
 
+Сайт должен открываться по адресу: **https://utromaya-code.github.io/japa/**
+
+---
+
+## Опубликовать сайт заново (после Unpublish)
+
+Если вы нажали «Unpublish» или сайт не открывается, сделайте по шагам:
+
+1. Откройте **https://github.com/utromaya-code/japa** → вкладка **Settings** (настройки репозитория).
+2. В левом меню в блоке **«Code and automation»** выберите **Pages**.
+3. В блоке **«Build and deployment»**:
+   - **Source:** выберите **GitHub Actions** (именно этот пункт, не «Deploy from a branch»).
+4. Нажмите **Save** (если кнопка активна).
+5. Запустите деплой одним из способов:
+   - **Вариант А:** вкладка **Actions** → слева выберите workflow **«Deploy to GitHub Pages»** → справа **Run workflow** → **Run workflow**. Дождитесь зелёной галочки (1–3 минуты).
+   - **Вариант Б:** сделайте любой коммит и `git push origin main` — деплой запустится автоматически.
+6. Проверьте сайт (лучше в режиме инкогнито): **https://utromaya-code.github.io/japa/**
+
+**Важно:**
+- Поле **Custom domain** должно быть **пустым**, иначе возможен редирект на другой домен.
+- На бесплатном GitHub Pages сайт публикуется только из **публичного** репозитория. Если репозиторий **Private**, в **Settings → General → Danger zone** можно сменить видимость на **Public**, либо использовать платный план (Pro/Team).
+
 ---
 
 ## Если редирект на leo-japan.ru не прекращается
