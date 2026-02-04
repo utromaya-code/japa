@@ -7,7 +7,8 @@ const links = [
   { href: '#locations', label: 'Локации' },
   { href: '#features', label: 'Особенности' },
   { href: '#program', label: 'Программа' },
-  { href: '#instructor', label: 'О гиде' },
+  { href: '#full-program', label: 'Маршрут' },
+  { href: '#instructor', label: 'О Леониде' },
   { href: '#practical', label: 'Информация' },
   { href: '#faq', label: 'FAQ' },
   { href: '#booking', label: 'Забронировать' },
@@ -35,7 +36,7 @@ export function Nav() {
         </ul>
         <button
           type="button"
-          className="md:hidden p-2 text-paper"
+          className="md:hidden p-3 min-h-[44px] min-w-[44px] flex items-center justify-center text-paper touch-manipulation"
           onClick={() => setOpen((o) => !o)}
           aria-label={open ? 'Закрыть меню' : 'Открыть меню'}
         >
@@ -55,7 +56,7 @@ export function Nav() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="block py-2 text-paper/90 hover:text-momiji-gold"
+                    className="block py-3 min-h-[44px] flex items-center text-paper/90 hover:text-momiji-gold active:bg-paper/10 touch-manipulation"
                     onClick={() => setOpen(false)}
                   >
                     {link.label}

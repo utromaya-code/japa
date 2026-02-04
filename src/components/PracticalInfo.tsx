@@ -22,7 +22,7 @@ const excluded = [
 const cards = [
   { icon: Calendar, label: 'Даты', value: '10–20 октября 2026' },
   { icon: Clock, label: 'Продолжительность', value: '11 дней / 10 ночей' },
-  { icon: Users, label: 'Группа', value: 'до 12 человек' },
+  { icon: Users, label: 'Группа', value: 'до 15 человек' },
   { icon: MapPin, label: 'Маршрут', value: 'Осака → Киото → Коясан → Хоккайдо → Токио' },
 ]
 

@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
-import { FallingLeaves } from './FallingLeaves'
 
 const HERO_IMAGE = 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1920&q=85'
 
@@ -18,7 +17,6 @@ export function Hero() {
         className="absolute inset-0 bg-gradient-to-t from-momiji-brown/95 via-momiji-brown/50 to-transparent"
         aria-hidden
       />
-      <FallingLeaves />
       <div className="relative z-10 container mx-auto px-4 text-center text-paper">
         <motion.h1
           className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4"
@@ -31,7 +29,7 @@ export function Hero() {
           <span className="text-momiji-gold">с Леонидом Кутузовым</span>
         </motion.h1>
         <motion.p
-          className="text-lg sm:text-xl md:text-2xl text-mist/95 mb-2"
+          className="text-sm sm:text-lg md:text-2xl text-mist/95 mb-2 px-1"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -54,13 +52,13 @@ export function Hero() {
         >
           <a
             href="#booking"
-            className="min-w-[200px] px-8 py-4 rounded-lg font-semibold bg-momiji-orange hover:bg-maple-accent text-white transition-colors shadow-lg"
+            className="w-full sm:w-auto min-w-0 sm:min-w-[200px] px-8 py-4 min-h-[48px] flex items-center justify-center rounded-lg font-semibold bg-momiji-orange hover:bg-maple-accent text-white transition-colors shadow-lg touch-manipulation"
           >
             Забронировать место
           </a>
           <a
             href="#program"
-            className="min-w-[200px] px-8 py-4 rounded-lg font-semibold border-2 border-paper/80 text-paper hover:bg-paper/10 transition-colors"
+            className="w-full sm:w-auto min-w-0 sm:min-w-[200px] px-8 py-4 min-h-[48px] flex items-center justify-center rounded-lg font-semibold border-2 border-paper/80 text-paper hover:bg-paper/10 transition-colors touch-manipulation"
           >
             Программа путешествия
           </a>

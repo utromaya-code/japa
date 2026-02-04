@@ -4,6 +4,7 @@ import { Brief } from './components/Brief'
 import { Locations } from './components/Locations'
 import { UniqueFeatures } from './components/UniqueFeatures'
 import { ProgramTimeline } from './components/ProgramTimeline'
+import { FullProgram } from './components/FullProgram'
 import { AboutInstructor } from './components/AboutInstructor'
 import { Gallery } from './components/Gallery'
 import { PracticalInfo } from './components/PracticalInfo'
@@ -21,6 +22,7 @@ function App() {
         <Locations />
         <UniqueFeatures />
         <ProgramTimeline />
+        <FullProgram />
         <AboutInstructor />
         <Gallery />
         <PracticalInfo />

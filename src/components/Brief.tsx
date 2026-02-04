@@ -1,8 +1,6 @@
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
-
-const text =
-  'Это уникальное 11-дневное путешествие проведёт вас через контрасты Японии осеннего сезона — от древних храмов Киото, утопающих в багряных кленах, до священных вершин Коясан, где веками живут буддийские монахи в уединении и медитации. Вы ощутите дух первозданного Хоккайдо с действующими вулканами, кальдерными озёрами и горячими источниками.'
+import { fullProgramIntro } from '../data/fullProgram'
 
 export function Brief() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 })
@@ -15,7 +13,7 @@ export function Brief() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          {text}
+          {fullProgramIntro}
         </motion.p>
       </div>
     </section>

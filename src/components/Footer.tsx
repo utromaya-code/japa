@@ -10,6 +10,8 @@ const social = [
 const navLinks = [
   { href: '#about', label: 'О путешествии' },
   { href: '#program', label: 'Программа' },
+  { href: '#full-program', label: 'Маршрут' },
+  { href: '#instructor', label: 'О Леониде' },
   { href: '#booking', label: 'Контакты' },
   { href: '#', label: 'Политика конфиденциальности' },
 ]

@@ -37,6 +37,17 @@ body {
   @apply font-body text-momiji-brown antialiased;
 }
 
+/* Мобильная версия: удобные зоны нажатия, без задержки двойного тапа */
+@media (hover: none) and (pointer: coarse) {
+  a, button {
+    -webkit-tap-highlight-color: rgba(255, 215, 0, 0.2);
+  }
+}
+
+.touch-manipulation {
+  touch-action: manipulation;
+}
+
 .font-display {
   font-family: 'Cormorant Garamond', serif;
 }

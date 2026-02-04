@@ -25,7 +25,7 @@ export const locations: LocationCard[] = [
     id: 'hokkaido',
     title: 'Хоккайдо (Хидака)',
     description: 'Дикие горы айнов, первозданные леса и священные вершины',
-    image: 'https://images.unsplash.com/photo-1578645510447-e20b43111e51?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80',
     imageAlt: 'Горы Хоккайдо осенью',
   },
   {

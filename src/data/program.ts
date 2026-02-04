@@ -33,7 +33,7 @@ export const program: DayProgram[] = [
     location: 'Хоккайдо (Хидака)',
     short: 'Перелёт на Хоккайдо. Горы Хидака, Mount Kamuiekuuchikaushi, первозданные леса и практики на природе.',
     full: 'Перелёт в Саппоро/Хидака. Треккинг в горах Хидака, священная гора айнов Kamuiekuuchikaushi. Практики с Леонидом на природе, ночлег в горных рёканах.',
-    image: 'https://images.unsplash.com/photo-1578645510447-e20b43111e51?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&q=80',
     imageAlt: 'Хоккайдо горы',
   },
   {
