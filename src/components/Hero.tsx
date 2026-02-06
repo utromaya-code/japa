@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
+import { TELEGRAM_BOOKING_LINK } from '../constants'
 
 const HERO_IMAGE = `${import.meta.env.BASE_URL}images/hero-temple.jpg`
 
@@ -60,7 +61,9 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.5 }}
         >
           <motion.a
-            href="#booking"
+            href={TELEGRAM_BOOKING_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full sm:w-auto min-w-0 sm:min-w-[200px] px-8 py-4 min-h-[48px] flex items-center justify-center rounded-lg font-semibold bg-maple-accent hover:bg-momiji-red text-white shadow-lg touch-manipulation"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}

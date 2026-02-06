@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { Send } from 'lucide-react'
-
-const TELEGRAM_LINK = 'https://t.me/vsemaya'
+import { TELEGRAM_BOOKING_LINK } from '../constants'
 
 export function ContactForm() {
   return (
@@ -17,7 +16,7 @@ export function ContactForm() {
           Лучшие условия для первых пяти участников — минимальная стоимость.
         </p>
         <motion.a
-          href={TELEGRAM_LINK}
+          href={TELEGRAM_BOOKING_LINK}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-3 px-10 py-5 rounded-xl font-semibold text-lg bg-momiji-orange hover:bg-maple-accent text-white shadow-lg hover:shadow-xl transition-colors"
