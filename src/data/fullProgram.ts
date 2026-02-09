@@ -50,8 +50,8 @@ export const fullProgramDays: FullProgramDay[] = [
     content: `Утро: Окуно-ин — путь к вечному Самадхи Кукая. Утренняя служба о-цутомэ с церемонией огня гома. Прогулка по кладбищу с 200 000 надгробий через лес вековых кедров к мавзолею Кобо Дайси — где, по учению Сингон, Кукай пребывает в вечной медитации уже более 1200 лет. Торо-до — зал с 10 000 фонарей.
 
 Вечер: перелёт на Хоккайдо — самый северный остров Японии, земля дикой природы и народа айнов.`,
-    image: 'images/koyasan-okunoin.jpg',
-    imageAlt: 'Коясан, Окуно-ин',
+    image: 'images/japan-from-plane.jpg',
+    imageAlt: 'Вид на Японию с самолёта',
   },
   {
     day: 5,
@@ -87,8 +87,8 @@ export const fullProgramDays: FullProgramDay[] = [
     day: 9,
     title: 'День 9 (18 октября, воскресенье): Отару → Токио',
     content: `Перелёт на Хонсю. Токио — мегаполис контрастов. Вечер: свободное время — Асакуса, Синдзюку, Сибуя, Харадзюку, Гинза, Акихабара.`,
-    image: 'images/tokyo-fuji.jpg',
-    imageAlt: 'Токио, вид на Фудзи',
+    image: 'images/tokyo-night.jpg',
+    imageAlt: 'Токио ночью',
   },
   {
     day: 10,
@@ -103,7 +103,7 @@ export const fullProgramDays: FullProgramDay[] = [
     day: 11,
     title: 'День 11 (20 октября, вторник): Вылет из Токио',
     content: `Финальный шоппинг. Трансфер в аэропорт.`,
-    image: 'images/tokyo-fuji.jpg',
-    imageAlt: 'Токио',
+    image: 'images/tokyo-aerial.jpg',
+    imageAlt: 'Токио с высоты',
   },
 ]
