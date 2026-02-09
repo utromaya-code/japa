@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import { fullProgramDays } from '../data/fullProgram'
+import { getImageUrl } from '../utils/imageUrl'
 
 function formatContent(content: string) {
   return content.split('\n').map((line, i) =>
@@ -56,8 +57,16 @@ export function FullProgram() {
                       transition={{ duration: 0.25 }}
                       className="overflow-hidden"
                     >
-                      <div className="px-4 pb-4 md:px-5 md:pb-5 pt-0 border-t border-paper/30 text-stone text-sm md:text-base leading-relaxed whitespace-pre-line">
-                        {formatContent(item.content)}
+                      <div className="border-t border-paper/30">
+                        <img
+                          src={getImageUrl(item.image)}
+                          alt={item.imageAlt}
+                          className="w-full aspect-[16/10] object-cover"
+                          loading="lazy"
+                        />
+                        <div className="px-4 pb-4 md:px-5 md:pb-5 pt-4 text-stone text-sm md:text-base leading-relaxed whitespace-pre-line">
+                          {formatContent(item.content)}
+                        </div>
                       </div>
                     </motion.div>
                   )}
