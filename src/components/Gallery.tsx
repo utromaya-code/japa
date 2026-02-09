@@ -33,7 +33,7 @@ export function Gallery() {
           Галерея
         </h2>
         <p className="text-stone text-center mb-10">
-          Ключевые места маршрута — листайте влево/вправо
+          Все фото в одном списке — листайте влево/вправо
         </p>
 
         <div className="relative">
