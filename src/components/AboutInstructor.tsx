@@ -13,14 +13,6 @@ const bullets = [
   '15+ лет проводит выездные ретриты по всему миру',
 ]
 
-const practices = [
-  'Медитация на природе в горах и храмах',
-  'Работа с вниманием и осознанностью',
-  'Дыхательные техники для восхождений',
-  'Лекции о нейрофизиологии медитации',
-  'Практики управления эмоциями через работу с центрами положительных и отрицательных эмоций',
-]
-
 export function AboutInstructor() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 })
   const [imgSrc, setImgSrc] = useState(INSTRUCTOR_IMAGE_LOCAL)
@@ -72,19 +64,6 @@ export function AboutInstructor() {
                 {bullets.map((item, i) => (
                   <li key={i} className="flex gap-2">
                     <span className="text-maple-accent shrink-0">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-display font-semibold text-amber text-lg mb-3">
-                Практики во время путешествия
-              </h3>
-              <ul className="space-y-2 text-momiji-brown">
-                {practices.map((item, i) => (
-                  <li key={i} className="flex gap-2">
-                    <span className="text-amber shrink-0">•</span>
                     <span>{item}</span>
                   </li>
                 ))}

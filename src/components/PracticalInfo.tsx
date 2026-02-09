@@ -1,4 +1,4 @@
-import { Calendar, Clock, Users, MapPin, Check, X } from 'lucide-react'
+import { Calendar, Clock, Users, MapPin, Check, X, Banknote } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { AnimatedNumber } from './AnimatedNumber'
 
@@ -16,10 +16,16 @@ const excluded = [
   'Страховка',
   'Питание (кроме завтраков в отелях и ужина сёдзин-рёри)',
   'Личные расходы',
+  'Одноместное размещение — доплата 700 €',
 ]
 
 const cards = [
   { icon: Calendar, label: 'Даты', value: '10–20 октября 2026' },
+  {
+    icon: Banknote,
+    label: 'Стоимость',
+    value: '4500 € (предоплата 2000 €, остаток по прилёту)',
+  },
   {
     icon: Clock,
     label: 'Продолжительность',
