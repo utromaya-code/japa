@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import Lightbox from 'yet-another-react-lightbox'
 import 'yet-another-react-lightbox/styles.css'
-import { galleryImages, type GalleryCategory } from '../data/gallery'
+import { galleryImages } from '../data/gallery'
 import { motion } from 'framer-motion'
 import { getImageUrl } from '../utils/imageUrl'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
@@ -9,23 +9,9 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 const CARD_WIDTH = 280
 const GAP = 16
 
-const CATEGORIES: { id: GalleryCategory | 'all'; label: string }[] = [
-  { id: 'all', label: 'Все' },
-  { id: 'kyoto', label: 'Киото' },
-  { id: 'koyasan', label: 'Коясан' },
-  { id: 'hokkaido', label: 'Хоккайдо' },
-  { id: 'tokyo', label: 'Токио' },
-]
-
 export function Gallery() {
   const [index, setIndex] = useState(-1)
-  const [filter, setFilter] = useState<GalleryCategory | 'all'>('all')
   const scrollRef = useRef<HTMLDivElement>(null)
-
-  const filteredImages =
-    filter === 'all'
-      ? galleryImages
-      : galleryImages.filter((img) => img.category === filter)
 
   const slides = galleryImages.map((img) => ({ src: getImageUrl(img.src), alt: img.alt }))
 
@@ -46,26 +32,9 @@ export function Gallery() {
         <h2 className="font-display text-3xl md:text-4xl font-bold text-momiji-brown text-center mb-4">
           Галерея
         </h2>
-        <p className="text-stone text-center mb-6">
+        <p className="text-stone text-center mb-10">
           Ключевые места маршрута — листайте влево/вправо
         </p>
-
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
-          {CATEGORIES.map((cat) => (
-            <button
-              key={cat.id}
-              type="button"
-              onClick={() => setFilter(cat.id)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                filter === cat.id
-                  ? 'bg-momiji-brown text-paper'
-                  : 'bg-white/80 text-momiji-brown border border-stone/20 hover:bg-momiji-gold/20'
-              }`}
-            >
-              {cat.label}
-            </button>
-          ))}
-        </div>
 
         <div className="relative">
           <button
@@ -90,7 +59,7 @@ export function Gallery() {
             className="flex gap-4 overflow-x-auto overflow-y-hidden py-2 px-1 snap-x snap-mandatory scroll-smooth hide-scrollbar"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
-            {filteredImages.map((img, i) => (
+            {galleryImages.map((img, i) => (
               <motion.button
                 key={img.src}
                 type="button"
